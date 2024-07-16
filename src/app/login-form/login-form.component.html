@@ -14,7 +14,6 @@
 
     <div class="tab-content">
 
-
       <div [ngClass]="active == 'login' ? 'tab-pane fade show active' : 'tab-pane fade'">
         <form (ngSubmit)="onSubmitLogin()" #loginForm="ngForm">
           <div class="form-outline mb-4">
@@ -25,6 +24,10 @@
           <div class="form-outline mb-4">
             <label class="form-label" for="loginPassword">Password</label>
             <input class="form-control" type="password" id="loginPassword" name="login" [(ngModel)]="password">
+          </div>
+
+          <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
           </div>
 
           <button type="submit" class="btn btn-primary btn-block mb-4">Sign-in</button>

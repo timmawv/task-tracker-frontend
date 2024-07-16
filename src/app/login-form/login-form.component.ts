@@ -15,6 +15,7 @@ export class LoginFormComponent {
   lastName: string = ""
   login: string = ""
   password: string = ""
+  errorMessage: string = "";
 
   onLoginTab(): void {
     this.active = "login";
